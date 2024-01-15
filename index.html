@@ -10,22 +10,22 @@
                 alert("Its a tie!");
                 playRound(getPlayerSelection(),getComputerChoice());
             } else if ((playerSelection==1)&&(computerSelection==2)) {
-                game.computerScore++;
+                computerScore++;
                 alert("Computer Wins!\nPaper beats Rock!");
             } else if ((playerSelection==1)&&(computerSelection==3)) {
-                game.playerScore++;
+                playerScore++;
                 alert("Player Wins!\nRock beats Scissors!");
             } else if ((playerSelection==2)&&(computerSelection==1)) {
-                game.playerScore++;
+                playerScore++;
                 alert("Player Wins!\nPaper beats Rock!");
             }  else if ((playerSelection==2)&&(computerSelection==3)) {
-                game.computerScore++;
+                computerScore++;
                 alert("Computer Wins!\nScissors beats Paper!");
             }  else if ((playerSelection==3)&&(computerSelection==1)) {
-                game.computerScore++;
+                computerScore++;
                 alert("Computer Wins!\nRock beats Scissors!")
             }  else {
-                game.playerScore++;
+                playerScore++;
                 alert("Player Wins!\nScissors beats Paper!")
             }
         }
@@ -43,11 +43,11 @@
         function getComputerChoice() {
            return Math.floor(Math.random() * 3) + 1;
         }
-
+        let playerScore = 0;
+        let computerScore = 0;
 
         function game(){
-            let playerScore = 0;
-            let computerScore = 0;
+
             playRound(getPlayerSelection(), getComputerChoice());
             alert(`Score is Player:${playerScore} Computer:${computerScore}`)
             playRound(getPlayerSelection(), getComputerChoice());
@@ -57,7 +57,13 @@
             playRound(getPlayerSelection(), getComputerChoice());
             alert(`Score is Player:${playerScore} Computer:${computerScore}`)
             playRound(getPlayerSelection(), getComputerChoice());
-            alert(`Score is Player:${playerScore} Computer:${computerScore}`)
+            if (playerScore>computerScore){
+                alert(`Player wins game\n Score: ${playerScore} - ${computerScore}`);
+            } else if (computerScore>playerScore) {
+                alert(`Computer wins game\n Score: ${playerScore} - ${computerScore}`);
+            } else {
+                alert(`Its a tie\n Score: ${playerScore} - ${computerScore}`)
+            }
         }
         game();
     </script>
