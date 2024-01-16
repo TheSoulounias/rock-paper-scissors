@@ -1,3 +1,4 @@
+/* Comment */
 function playRound(playerSelection, computerSelection) {
     if (playerSelection==computerSelection){
         alert("Its a tie!");
