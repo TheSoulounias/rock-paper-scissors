@@ -40,4 +40,8 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
-game();
+function alertFunction() {
+  alert("this works");
+}
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", alertFunction);
