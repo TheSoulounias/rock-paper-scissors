@@ -1,26 +1,32 @@
 /* Comment */
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
-    alert("Its a tie!");
+    updateMessage("Its a tie!");
     playRound(getPlayerSelection(), getComputerChoice());
   } else if (playerSelection == 1 && computerSelection == 2) {
     computerScore++;
-    alert("Computer Wins!\nPaper beats Rock!");
+    updateMessage("Computer Wins!Paper beats Rock!");
+    updateScores;
   } else if (playerSelection == 1 && computerSelection == 3) {
     playerScore++;
-    alert("Player Wins!\nRock beats Scissors!");
+    updateMessage("Player Wins!Rock beats Scissors!");
+    updateScores;
   } else if (playerSelection == 2 && computerSelection == 1) {
     playerScore++;
-    alert("Player Wins!\nPaper beats Rock!");
+    updateMessage("Player Wins!Paper beats Rock!");
+    updateScores;
   } else if (playerSelection == 2 && computerSelection == 3) {
     computerScore++;
-    alert("Computer Wins!\nScissors beats Paper!");
+    updateMessage("Computer Wins!Scissors beats Paper!");
+    updateScores;
   } else if (playerSelection == 3 && computerSelection == 1) {
     computerScore++;
-    alert("Computer Wins!\nRock beats Scissors!");
+    updateMessage("Computer Wins!Rock beats Scissors!");
+    updateScores;
   } else {
     playerScore++;
-    alert("Player Wins!\nScissors beats Paper!");
+    updateMessage("Player Wins!Scissors beats Paper!");
+    updateScores;
   }
 }
 
@@ -38,19 +44,30 @@ function getComputerChoice() {
   return Math.floor(Math.random() * 3) + 1;
 }
 
-const yourScore = document.querySelector('#your-score')
-const compScore = document.querySelector('#comp-score')
+const yourScore = document.querySelector('#your-score');
+const compScore = document.querySelector('#comp-score');
+const message = document.querySelector('#message');
 
 
 
-let playerScore = 1;
-let computerScore = 4;
+let playerScore = 0;
+let computerScore = 0;
 
 yourScore.textContent = playerScore;
 compScore.textContent = computerScore;
 
+
 function alertFunction() {
   alert("this works");
+}
+
+function updateScores() {
+  yourScore.textContent = playerScore;
+  compScore.textContent = computerScore;
+}
+
+function updateMessage(messageText) {
+  message.textContent = messageText;
 }
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", alertFunction);
@@ -66,3 +83,7 @@ function gameReset() {
   let computerScore =0;
 
 }
+
+// Testing zone
+
+playRound(getPlayerSelection(), getComputerChoice());
