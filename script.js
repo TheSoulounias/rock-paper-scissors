@@ -37,8 +37,17 @@ function getPlayerSelection() {
 function getComputerChoice() {
   return Math.floor(Math.random() * 3) + 1;
 }
-let playerScore = 0;
-let computerScore = 0;
+
+const yourScore = document.querySelector('#your-score')
+const compScore = document.querySelector('#comp-score')
+
+
+
+let playerScore = 1;
+let computerScore = 4;
+
+yourScore.textContent = playerScore;
+compScore.textContent = computerScore;
 
 function alertFunction() {
   alert("this works");
@@ -51,3 +60,9 @@ paper.addEventListener("click", alertFunction);
 
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener("click", alertFunction);
+
+function gameReset() {
+  let playerScore = 0;
+  let computerScore =0;
+
+}
