@@ -30,15 +30,14 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function getPlayerSelection() {
-  const input = prompt("Select\n1 rock\n2 paper\n3 scissors");
+function getPlayerSelection(input) {
   if (input == 1 || input == 2 || input == 3) {
     return input;
   } else {
     alert("Invalid selection!");
     getPlayerSelection();
   }
-}
+} 
 
 function getComputerChoice() {
   return Math.floor(Math.random() * 3) + 1;
@@ -70,18 +69,22 @@ function updateMessage(messageText) {
   message.textContent = messageText;
 }
 const rock = document.querySelector("#rock");
-rock.addEventListener("click", alertFunction);
+rock.addEventListener("click", 
+  playerScore(1,getComputerChoice());
 
 const paper = document.querySelector('#paper');
-paper.addEventListener("click", alertFunction);
+paper.addEventListener("click",
+  playerScore(2,getComputerChoice());
 
 const scissors = document.querySelector('#scissors');
-scissors.addEventListener("click", alertFunction);
+scissors.addEventListener("click",
+  playerScore(3,getComputerChoice());
 
 function gameReset() {
-  let playerScore = 0;
-  let computerScore =0;
-
+  playerScore = 0;
+  computerScore = 0;
+  updateScores();
+  updateMessage("Let's begin. Choose a hand!")
 }
 
 // Testing zone
