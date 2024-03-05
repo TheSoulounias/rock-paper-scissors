@@ -45,3 +45,9 @@ function alertFunction() {
 }
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", alertFunction);
+
+const paper = document.querySelector('#paper');
+paper.addEventListener("click", alertFunction);
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener("click", alertFunction);

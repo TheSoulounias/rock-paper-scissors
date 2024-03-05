@@ -1,0 +1,16 @@
+.container {
+  background-color: #8d8;
+  display: flex;
+  text-align: center;
+}
+.item {
+   flex: 0 1 auto;
+   text-align: center;
+}
+button {
+  flex: 1 1 auto;
+}
+
+#score-board {
+  justify-content: center;
+}

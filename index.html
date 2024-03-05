@@ -4,9 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body>
-    <div id="container">
+    <div id="message-board" class="item">
+     <h2>Let's Begin. Choose your hand!</h2> 
+    </div>
+    <div class="container item" id="score-board">
+      <div class="item"><h2 id="your-score">0</h2></div>
+      <div class="item"><h2>-</h2></div>
+      <div class="item"><h2 id="comp-score">0</h2></div>
+
+    </div>
+    <div id="selectionsContainer" class="container">
       <button id="rock">rock</button>
       <button id="paper">paper</button>
       <button id="scissors">scissors</button>
