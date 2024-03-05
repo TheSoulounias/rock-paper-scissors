@@ -5,27 +5,27 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection == 1 && computerSelection == 2) {
     computerScore++;
     updateMessage("Computer Wins!Paper beats Rock!");
-    updateScores;
+    updateScores();
   } else if (playerSelection == 1 && computerSelection == 3) {
     playerScore++;
     updateMessage("Player Wins!Rock beats Scissors!");
-    updateScores;
+    updateScores();
   } else if (playerSelection == 2 && computerSelection == 1) {
     playerScore++;
     updateMessage("Player Wins!Paper beats Rock!");
-    updateScores;
+    updateScores();
   } else if (playerSelection == 2 && computerSelection == 3) {
     computerScore++;
     updateMessage("Computer Wins!Scissors beats Paper!");
-    updateScores;
+    updateScores();
   } else if (playerSelection == 3 && computerSelection == 1) {
     computerScore++;
     updateMessage("Computer Wins!Rock beats Scissors!");
-    updateScores;
+    updateScores();
   } else {
     playerScore++;
     updateMessage("Player Wins!Scissors beats Paper!");
-    updateScores;
+    updateScores();
   }
 }
 
