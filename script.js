@@ -76,6 +76,8 @@ paper.onclick = () => playRound(2,getComputerChoice());
 const scissors = document.querySelector('#scissors');
 scissors.onclick = () => playRound(3,getComputerChoice());
 
+const reset = document.querySelector('#reset')
+reset.onclick = () => gameReset();
 function gameReset() {
   playerScore = 0;
   computerScore = 0;
