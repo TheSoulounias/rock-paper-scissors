@@ -1,8 +1,7 @@
 /* Comment */
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
-    updateMessage("Its a tie!");
-    playRound(getPlayerSelection(), getComputerChoice());
+    updateMessage("Its a tie! Throw a hand again!");
   } else if (playerSelection == 1 && computerSelection == 2) {
     computerScore++;
     updateMessage("Computer Wins!Paper beats Rock!");
@@ -69,16 +68,13 @@ function updateMessage(messageText) {
   message.textContent = messageText;
 }
 const rock = document.querySelector("#rock");
-rock.addEventListener("click", 
-  playerScore(1,getComputerChoice());
+rock.addEventListener("click", playRound(1,getComputerChoice()));
 
 const paper = document.querySelector('#paper');
-paper.addEventListener("click",
-  playerScore(2,getComputerChoice());
+paper.addEventListener("click", playRound(2,getComputerChoice()));
 
 const scissors = document.querySelector('#scissors');
-scissors.addEventListener("click",
-  playerScore(3,getComputerChoice());
+scissors.addEventListener("click", playRound(3,getComputerChoice()));
 
 function gameReset() {
   playerScore = 0;
@@ -89,4 +85,3 @@ function gameReset() {
 
 // Testing zone
 
-playRound(getPlayerSelection(), getComputerChoice());
